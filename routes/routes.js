@@ -12,6 +12,10 @@ const router = Router();
 // pattern I used is router.method, then pass the path, middlewares and controllers in there.
 
 
+router.get('/', (req, res) => {
+    res.send("Welcome here")
+})
+
 router.post('/add-products', productValidation, validateRequest ,createProduct)
 
 router.put('/edit-products/:id', productValidation, validateRequest, editProduct);
