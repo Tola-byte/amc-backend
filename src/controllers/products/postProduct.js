@@ -5,7 +5,7 @@ export const createProduct = async (req, res) => {
 
     try {
        
-        const { name, price, category, count, image } = req.body;
+        const { name, price,description, category, count, image } = req.body;
 
        
         const newProduct = new Product({
