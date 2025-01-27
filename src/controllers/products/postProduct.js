@@ -1,5 +1,5 @@
 import Product from "../../models/products/product.js";
-import { validationResult } from 'express-validator';
+
 
 export const createProduct = async (req, res) => {
 
@@ -11,6 +11,7 @@ export const createProduct = async (req, res) => {
         const newProduct = new Product({
             name,
             price,
+            description,
             category,
             count,
             image,
@@ -25,7 +26,6 @@ export const createProduct = async (req, res) => {
             product,
         });
     } catch (error) {
-        console.log('Error creating product:', error);
         return res.status(500).json({
             message: 'Error creating product, please try again later.',
             error: error.message,

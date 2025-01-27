@@ -25,7 +25,6 @@ export const editProduct = async (req, res) => {
             product: updatedProduct,
         });
     } catch (error) {
-        console.log('Error updating product:', error);
         return res.status(500).json({
             message: 'An error occurred while updating the product',
             error: error.message,
